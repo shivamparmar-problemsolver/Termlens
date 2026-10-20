@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TermsLens</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">TL</span>
+          <div>
+            <h1>TermsLens</h1>
+            <p class="muted">Plain-language policy review</p>
+          </div>
+        </div>
+        <button id="analyze-btn" class="ghost-btn" type="button">Scan</button>
+      </header>
+
+      <section id="site-card" class="card site-card">
+        <div>
+          <p class="label">Current site</p>
+          <h2 id="site-title">Reading page…</h2>
+          <p id="site-url" class="muted url"></p>
+        </div>
+        <span id="status-chip" class="chip">Idle</span>
+      </section>
+
+      <main id="app" class="content">
+        <section class="state" id="welcome-state">
+          <div class="pulse-ring"></div>
+          <h3>Scan this page</h3>
+          <p class="muted">
+            TermsLens looks for a Privacy Policy or Terms page, then summarizes what it can actually
+            quote from the text.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>No browsing history is uploaded beyond the policy text you scan.</span>
+        <a href="../options/options.html" target="_blank" rel="noreferrer">Settings</a>
+      </footer>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

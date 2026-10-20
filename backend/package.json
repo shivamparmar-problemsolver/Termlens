@@ -1,0 +1,14 @@
+{
+  "name": "termslens-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local TermsLens analysis API. Keeps model keys off the extension.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

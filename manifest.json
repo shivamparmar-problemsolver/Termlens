@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "TermsLens",
+  "version": "1.0.0",
+  "description": "Simplifies Terms & Conditions and Privacy Policies into plain-language summaries with evidence-backed red flags.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1:8787/*", "http://localhost:8787/*", "<all_urls>"],
+  "action": {
+    "default_title": "TermsLens",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": [
+        "src/constants.js",
+        "src/detector.js",
+        "src/extractor.js",
+        "src/heuristic.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
